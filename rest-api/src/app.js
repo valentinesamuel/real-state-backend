@@ -2,6 +2,7 @@ const express = require('express')
 const cors = require('cors')
 const morgan = require('morgan')
 const app = express()
+const v1Router = require('../src/v1/index');
 
 app.use(cors({
     origin: '*'
