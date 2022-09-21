@@ -8,6 +8,7 @@ app.use(cors({
 }))
 app.use(morgan('combined'))
 app.use(express.json())
+app.use('/v1', v1Router)
 app.get('/', (req, res) => {
   return res.status(200).json("Welcome bruvhhh.")
 })
