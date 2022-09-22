@@ -11,16 +11,18 @@ function addHome(req, res) {
 }
 
 function getHomeById(req, res) {
-    const id = req.params.id
+    const id = Number(req.params.id)
     console.log(id)
-    const home = homesData.find(home => home.id == id)
+    const home = homesData.find(home => home.id === id)
     return res.status(200).json(home)
 }
 
 function deleteHomeById(req, res) {
-    const id = req.params.id
+    const id = Number(req.params.id)
     homesData = homesData.filter(home => home.id !== id)
-    return res.status(200).json(homesData)
+    return res.status(200).json({
+        success: true
+    })
 }
 
 module.exports = {
